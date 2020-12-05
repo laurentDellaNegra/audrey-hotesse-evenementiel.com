@@ -11,8 +11,8 @@
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
 
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- <link rel="manifest" href="site.webmanifest" /> -->
+    <!-- <link rel="apple-touch-icon" href="icon.png" /> -->
     <!-- Place favicon.ico in the root directory -->
   </head>
 
@@ -20,7 +20,24 @@
     <!-- Header -->
     <%= require('html-loader!./partials/header.html') %>
 
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <p class="font-semibold">Content</p>
+    <!-- Intro -->
+    <%= require('html-loader!./partials/intro.html') %>
+
+    <div class="pt-16">
+      <!-- Qui suis-je -->
+      <%= require('html-loader!./partials/who.html') %>
+
+      <!-- Tenues -->
+      <%= require('html-loader!./partials/outfits.html') %>
+
+      <!-- Prestations -->
+      <%= require('html-loader!./partials/services.html') %>
+
+      <!-- Evenements -->
+      <%= require('html-loader!./partials/events.html') %>
+
+      <!-- Contact -->
+      <%= require('html-loader!./partials/contact.html') %>
+    </div>
   </body>
 </html>
