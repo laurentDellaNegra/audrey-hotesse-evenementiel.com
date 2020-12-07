@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .section-title {
+    @apply font-display text-5xl text-center mb-16;
+  }
+
+  .section-content {
+    @apply text-gray-500;
+  }
+}
