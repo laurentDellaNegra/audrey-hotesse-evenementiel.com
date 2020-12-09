@@ -12,7 +12,9 @@
   },
   "author": "laurent.dellanegra@gmail.com",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.5.1"
+  },
   "devDependencies": {
     "autoprefixer": "^10.0.4",
     "css-loader": "^5.0.1",
