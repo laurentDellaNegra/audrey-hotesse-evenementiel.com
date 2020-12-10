@@ -4,7 +4,7 @@
 
 @layer components {
   .section-title {
-    @apply font-display text-5xl text-center mb-16 flex justify-center space-x-1;
+    @apply font-display text-5xl text-center mb-8 sm:mb-16 flex justify-center space-x-1;
   }
 
   .section-content {
