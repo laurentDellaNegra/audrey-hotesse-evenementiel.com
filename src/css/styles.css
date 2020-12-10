@@ -10,4 +10,8 @@
   .section-content {
     @apply text-gray-500;
   }
+
+  .header-link {
+    @apply p-4 hover:bg-black hover:text-white active:bg-red-700;
+  }
 }
