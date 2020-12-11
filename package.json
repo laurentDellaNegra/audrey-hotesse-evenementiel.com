@@ -13,7 +13,8 @@
   "author": "laurent.dellanegra@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "kwesforms": "^2.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.4",

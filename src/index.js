@@ -1,6 +1,12 @@
 import "./css/styles.css";
 import $ from "jquery";
+import kwesforms from "kwesforms";
 
+/**
+ * Smooth scroll management
+ *
+ *
+ */
 // Add smooth scrolling to all links
 $("a").on("click", function (event) {
   // Make sure this.hash has a value before overriding default behavior
@@ -26,26 +32,76 @@ $("a").on("click", function (event) {
   }
 });
 
-$("#openNav").on("click", function (event) {
+/**
+ * KwesForms
+ * Mail support for contact
+ *
+ */
+kwesforms.init();
+
+let isFormOpen = false;
+const showBackdrop = function () {
+  $("#backdrop").removeClass("invisible");
+  $("#backdrop").addClass("opacity-50");
+};
+const hideBackdrop = function () {
+  setTimeout(() => $("#backdrop").addClass("invisible"), 500);
+  $("#backdrop").removeClass("opacity-50");
+};
+const openForm = function () {
+  // show form
+  $("#form").removeClass("invisible");
+  // opacity
+  $("#form").removeClass("opacity-0");
+  $("#form").addClass("opacity-100");
+  // translate
+  $("#containerForm").addClass("-translate-y-8");
+  //backdrop
+  showBackdrop();
+  isFormOpen = true;
+};
+const closeForm = function () {
+  // opacity
+  $("#form").removeClass("opacity-100");
+  $("#form").addClass("opacity-0");
+  // translate
+  $("#containerForm").removeClass("-translate-y-8");
+  hideBackdrop();
+  // add timeout to wait the end animation opacity
+  setTimeout(() => {
+    $("#form").addClass("invisible");
+    // backdrop
+    isFormOpen = false;
+  }, 1000);
+};
+$("#form-button").on("click", function () {
+  if (!isFormOpen) {
+    openForm();
+  } else {
+    closeForm();
+  }
+});
+
+/**
+ * Navbar management
+ *
+ *
+ */
+
+const openNav = function () {
   $("#sidenav").addClass("translate-x-0");
   $("#sidenav").removeClass("translate-x-full");
-  $("#backdrop").removeClass("hidden");
-});
-
-$("#closeNav").on("click", function (event) {
+  $("#backdrop").removeClass("invisible");
+};
+const closeNav = function () {
   $("#sidenav").addClass("translate-x-full");
   $("#sidenav").removeClass("translate-x-0");
-  $("#backdrop").addClass("hidden");
-});
-
-$("#backdrop").on("click", function (event) {
-  $("#sidenav").addClass("translate-x-full");
-  $("#sidenav").removeClass("translate-x-0");
-  $("#backdrop").addClass("hidden");
-});
-
-$(".aside-link").on("click", function (event) {
-  $("#sidenav").addClass("translate-x-full");
-  $("#sidenav").removeClass("translate-x-0");
-  $("#backdrop").addClass("hidden");
+  $("#backdrop").addClass("invisible");
+};
+$("#openNav").on("click", openNav);
+$("#closeNav").on("click", closeNav);
+$(".aside-link").on("click", closeNav);
+$("#backdrop").on("click", function () {
+  closeNav();
+  if (isFormOpen) closeForm();
 });
