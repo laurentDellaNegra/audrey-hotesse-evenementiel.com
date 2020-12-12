@@ -43,13 +43,13 @@ let isFormOpen = false;
 let isBackdrop = false;
 const showBackdrop = function () {
   if (!isBackdrop) {
-    $("#backdrop").removeClass("invisible opacity-0").addClass("opacity-50");
+    $("#backdrop").removeClass("invisible opacity-0").addClass("opacity-25");
     isBackdrop = true;
   }
 };
 const hideBackdrop = function () {
   if (isBackdrop) {
-    $("#backdrop").removeClass("opacity-50").addClass("opacity-0");
+    $("#backdrop").removeClass("opacity-25").addClass("opacity-0");
     // Wait the end of animation
     setTimeout(() => {
       $("#backdrop").addClass("invisible");

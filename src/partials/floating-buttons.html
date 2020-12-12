@@ -1,22 +1,23 @@
+<div id="containerForm" class="fixed bottom-40 right-0 z-20 w-screen px-4 sm:w-96 h-96 transform-gpu duration-700">
+  <form
+    id="form"
+    class="invisible transition-opacity opacity-0 duration-700 flex flex-col space-y-4 bg-gray-200 border p-6 mb-2  shadow-2xl rounded-lg"
+  >
+    <input type="text" class="p-2 rounded-lg" placeholder="Adresse mail..." />
+    <textarea
+      class="p-2 rounded-lg"
+      rows="12"
+      placeholder="Saisissez votre requête, devis ou tout autre question..."
+    ></textarea>
+    <input
+      class="p-2 bg-red-700 text-white rounded-lg"
+      type="submit"
+      value="Envoyer"
+    />
+  </form>
+</div>
+
 <div class="fixed bottom-0 right-0 mb-8 mr-4 z-20">
-  <div id="containerForm" class="transform-gpu duration-700">
-    <form
-      id="form"
-      class="invisible transition-opacity opacity-0 duration-700 flex flex-col space-y-4 bg-gray-200 border p-6 mb-2 absolute right-0 bottom-0 w-72 sm:w-96 h-96 shadow-2xl rounded-lg"
-    >
-      <input type="text" class="p-2 rounded-lg" placeholder="Adresse mail..." />
-      <textarea
-        class="p-2 rounded-lg"
-        rows="12"
-        placeholder="Saisissez votre requête, devis ou tout autre question..."
-      ></textarea>
-      <input
-        class="p-2 bg-red-700 text-white rounded-lg"
-        type="submit"
-        value="Envoyer"
-      />
-    </form>
-  </div>
   <button
     id="form-button"
     class="focus:outline-none focus:ring-4 bg-red-700 text-white rounded-full h-14 w-14 flex items-center justify-center shadow-2xl"
