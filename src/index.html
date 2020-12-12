@@ -19,9 +19,14 @@
       href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
   </head>
 
-  <body>
+  <body class="hide transition-opacity duration-700 opacity-0">
     <!-- Header -->
     <%= require('html-loader!./partials/header.html') %>
 

@@ -94,3 +94,8 @@ $("#backdrop").on("click", function () {
   closeNav();
   if (isFormOpen) closeForm();
 });
+
+$("body").removeClass("hide");
+setTimeout(() => {
+  $("body").removeClass("opacity-0").addClass("opacity-100");
+}, 500);
