@@ -40,28 +40,41 @@ $("a").on("click", function (event) {
 kwesforms.init();
 
 let isFormOpen = false;
+let isBackdrop = false;
 const showBackdrop = function () {
-  $("#backdrop").removeClass("invisible opacity-0").addClass("opacity-50");
+  if (!isBackdrop) {
+    $("#backdrop").removeClass("invisible opacity-0").addClass("opacity-50");
+    isBackdrop = true;
+  }
 };
 const hideBackdrop = function () {
-  $("#backdrop").removeClass("opacity-50").addClass("opacity-0");
-  // Wait the end of animation
-  setTimeout(() => $("#backdrop").addClass("invisible"), 1000);
+  if (isBackdrop) {
+    $("#backdrop").removeClass("opacity-50").addClass("opacity-0");
+    // Wait the end of animation
+    setTimeout(() => {
+      $("#backdrop").addClass("invisible");
+      isBackdrop = false;
+    }, 1000);
+  }
 };
 const openForm = function () {
-  $("#form").removeClass("invisible opacity-0").addClass("opacity-100");
-  $("#containerForm").addClass("-translate-y-8");
-  showBackdrop();
-  isFormOpen = true;
+  if (!isFormOpen) {
+    $("#form").removeClass("invisible opacity-0").addClass("opacity-100");
+    $("#containerForm").addClass("-translate-y-8");
+    showBackdrop();
+    isFormOpen = true;
+  }
 };
 const closeForm = function () {
-  $("#form").removeClass("opacity-100").addClass("opacity-0");
-  $("#containerForm").removeClass("-translate-y-8");
-  hideBackdrop();
-  setTimeout(() => {
-    $("#form").addClass("invisible");
-    isFormOpen = false;
-  }, 1000);
+  if (isFormOpen) {
+    $("#form").removeClass("opacity-100").addClass("opacity-0");
+    $("#containerForm").removeClass("-translate-y-8");
+    hideBackdrop();
+    setTimeout(() => {
+      $("#form").addClass("invisible");
+      isFormOpen = false;
+    }, 1000);
+  }
 };
 $("#form-button").on("click", function () {
   if (!isFormOpen) {
@@ -78,24 +91,22 @@ $("#form-button").on("click", function () {
  */
 
 const openNav = function () {
-  $("#sidenav").addClass("translate-x-0");
-  $("#sidenav").removeClass("translate-x-full");
-  $("#backdrop").removeClass("invisible");
+  $("#sidenav").addClass("translate-x-0").removeClass("translate-x-full");
+  showBackdrop();
 };
 const closeNav = function () {
-  $("#sidenav").addClass("translate-x-full");
-  $("#sidenav").removeClass("translate-x-0");
-  $("#backdrop").addClass("invisible");
+  $("#sidenav").addClass("translate-x-full").removeClass("translate-x-0");
+  hideBackdrop();
 };
 $("#openNav").on("click", openNav);
 $("#closeNav").on("click", closeNav);
 $(".aside-link").on("click", closeNav);
 $("#backdrop").on("click", function () {
   closeNav();
-  if (isFormOpen) closeForm();
+  closeForm();
 });
 
 $("body").removeClass("hide");
-setTimeout(() => {
-  $("body").removeClass("opacity-0").addClass("opacity-100");
+setTimeout(function () {
+  $("body").toggleClass("opacity-100");
 }, 500);
