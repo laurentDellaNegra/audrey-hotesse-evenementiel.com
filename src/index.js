@@ -41,10 +41,11 @@ kwesforms.init();
 
 let isFormOpen = false;
 const showBackdrop = function () {
-  $("#backdrop").removeClass("invisible").addClass("opacity-50");
+  $("#backdrop").removeClass("invisible opacity-0").addClass("opacity-50");
 };
 const hideBackdrop = function () {
-  $("#backdrop").removeClass("opacity-50");
+  $("#backdrop").removeClass("opacity-50").addClass("opacity-0");
+  // Wait the end of animation
   setTimeout(() => $("#backdrop").addClass("invisible"), 1000);
 };
 const openForm = function () {
