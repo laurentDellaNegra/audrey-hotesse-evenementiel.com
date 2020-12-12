@@ -41,36 +41,24 @@ kwesforms.init();
 
 let isFormOpen = false;
 const showBackdrop = function () {
-  $("#backdrop").removeClass("invisible");
-  $("#backdrop").addClass("opacity-50");
+  $("#backdrop").removeClass("invisible").addClass("opacity-50");
 };
 const hideBackdrop = function () {
-  setTimeout(() => $("#backdrop").addClass("invisible"), 500);
   $("#backdrop").removeClass("opacity-50");
+  setTimeout(() => $("#backdrop").addClass("invisible"), 1000);
 };
 const openForm = function () {
-  // show form
-  $("#form").removeClass("invisible");
-  // opacity
-  $("#form").removeClass("opacity-0");
-  $("#form").addClass("opacity-100");
-  // translate
+  $("#form").removeClass("invisible opacity-0").addClass("opacity-100");
   $("#containerForm").addClass("-translate-y-8");
-  //backdrop
   showBackdrop();
   isFormOpen = true;
 };
 const closeForm = function () {
-  // opacity
-  $("#form").removeClass("opacity-100");
-  $("#form").addClass("opacity-0");
-  // translate
+  $("#form").removeClass("opacity-100").addClass("opacity-0");
   $("#containerForm").removeClass("-translate-y-8");
   hideBackdrop();
-  // add timeout to wait the end animation opacity
   setTimeout(() => {
     $("#form").addClass("invisible");
-    // backdrop
     isFormOpen = false;
   }, 1000);
 };
