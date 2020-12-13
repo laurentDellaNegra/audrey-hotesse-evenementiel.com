@@ -40,7 +40,7 @@ $("a").on("click", function (event) {
  * Mail support for contact
  *
  */
-kwesforms.init();
+// kwesforms.init();
 
 let isFormOpen = false;
 let isBackdrop = false;
