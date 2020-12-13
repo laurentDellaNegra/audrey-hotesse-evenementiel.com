@@ -19,16 +19,19 @@ $("a").on("click", function (event) {
 
     // Using jQuery's animate() method to add smooth page scroll
     // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-    $("html, body").animate(
-      {
-        scrollTop: $(hash).offset().top,
-      },
-      800,
-      function () {
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      }
-    );
+    $("html, body")
+      .stop()
+      .animate(
+        {
+          scrollTop: $(hash).offset().top,
+        },
+        800,
+        "swing",
+        function () {
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        }
+      );
   }
 });
 
@@ -54,7 +57,7 @@ const hideBackdrop = function () {
     setTimeout(() => {
       $("#backdrop").addClass("invisible");
       isBackdrop = false;
-    }, 1000);
+    }, 500);
   }
 };
 const openForm = function () {
@@ -73,7 +76,7 @@ const closeForm = function () {
     setTimeout(() => {
       $("#form").addClass("invisible");
       isFormOpen = false;
-    }, 1000);
+    }, 500);
   }
 };
 $("#form-button").on("click", function () {
@@ -89,14 +92,18 @@ $("#form-button").on("click", function () {
  *
  *
  */
-
+let isSideNav = false;
 const openNav = function () {
+  if (isSideNav) return;
   $("#sidenav").addClass("translate-x-0").removeClass("translate-x-full");
   showBackdrop();
+  isSideNav = true;
 };
 const closeNav = function () {
+  if (!isSideNav) return;
   $("#sidenav").addClass("translate-x-full").removeClass("translate-x-0");
   hideBackdrop();
+  isSideNav = false;
 };
 $("#openNav").on("click", openNav);
 $("#closeNav").on("click", closeNav);
