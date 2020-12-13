@@ -92,18 +92,16 @@ $("#form-button").on("click", function () {
  *
  *
  */
-let isSideNav = false;
 const openNav = function () {
-  if (isSideNav) return;
+  if (isBackdrop) return;
   $("#sidenav").addClass("translate-x-0").removeClass("translate-x-full");
   showBackdrop();
-  isSideNav = true;
 };
 const closeNav = function () {
-  if (!isSideNav) return;
+  console.log("isBackdrop", isBackdrop);
+  if (!isBackdrop) return;
   $("#sidenav").addClass("translate-x-full").removeClass("translate-x-0");
   hideBackdrop();
-  isSideNav = false;
 };
 $("#openNav").on("click", openNav);
 $("#closeNav").on("click", closeNav);
