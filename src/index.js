@@ -46,8 +46,11 @@ let isFormOpen = false;
 let isBackdrop = false;
 const showBackdrop = function () {
   if (!isBackdrop) {
-    $("#backdrop").removeClass("invisible opacity-0").addClass("opacity-25");
-    isBackdrop = true;
+    $("#backdrop").removeClass("hidden").addClass("block");
+    setTimeout(() => {
+      $("#backdrop").removeClass("opacity-0").addClass("opacity-25");
+      isBackdrop = true;
+    });
   }
 };
 const hideBackdrop = function () {
@@ -55,17 +58,20 @@ const hideBackdrop = function () {
     $("#backdrop").removeClass("opacity-25").addClass("opacity-0");
     // Wait the end of animation
     setTimeout(() => {
-      $("#backdrop").addClass("invisible");
+      $("#backdrop").addClass("hidden").removeClass("block");
       isBackdrop = false;
     }, 500);
   }
 };
 const openForm = function () {
   if (!isFormOpen) {
-    $("#form").removeClass("invisible opacity-0").addClass("opacity-100");
-    $("#containerForm").addClass("-translate-y-8");
+    $("#containerForm").removeClass("hidden").addClass("block");
     showBackdrop();
-    isFormOpen = true;
+    setTimeout(() => {
+      $("#form").removeClass("opacity-0").addClass("opacity-100");
+      $("#containerForm").addClass("-translate-y-8");
+      isFormOpen = true;
+    });
   }
 };
 const closeForm = function () {
@@ -74,9 +80,9 @@ const closeForm = function () {
     $("#containerForm").removeClass("-translate-y-8");
     hideBackdrop();
     setTimeout(() => {
-      $("#form").addClass("invisible");
+      $("#containerForm").addClass("hidden").removeClass("block");
       isFormOpen = false;
-    }, 500);
+    }, 100);
   }
 };
 $("#form-button").on("click", function () {
