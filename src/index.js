@@ -1,6 +1,7 @@
 import "./css/styles.css";
 import $ from "jquery";
 import kwesforms from "kwesforms";
+import { tns } from "tiny-slider/src/tiny-slider";
 
 /**
  * Smooth scroll management
@@ -116,6 +117,33 @@ $("#backdrop").on("click", function () {
   closeNav();
   closeForm();
 });
+
+/**
+ * Tiny slider
+ *
+ */
+const slider = tns({
+  container: ".carousel",
+  items: 1,
+  responsive: {
+    768: {
+      items: 2,
+    },
+    1024: {
+      items: 3,
+    },
+  },
+  slideBy: "page",
+  autoplay: true,
+  controls: false,
+  nav: false,
+  autoplayButtonOutput: false,
+});
+
+/**
+ * Init
+ *
+ */
 
 $("body").removeClass("hide");
 setTimeout(function () {
