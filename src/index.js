@@ -125,6 +125,8 @@ $("#backdrop").on("click", function () {
 const slider = tns({
   container: ".carousel",
   items: 1,
+  autoplayTimeout: 3000,
+  speed: 500,
   responsive: {
     768: {
       items: 2,
@@ -136,7 +138,8 @@ const slider = tns({
   slideBy: "page",
   autoplay: true,
   controls: false,
-  nav: false,
+  nav: true,
+  // navPosition: "bottom",
   autoplayButtonOutput: false,
 });
 
