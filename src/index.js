@@ -139,7 +139,7 @@ const slider = tns({
   autoplay: true,
   controls: false,
   nav: true,
-  // navPosition: "bottom",
+  navPosition: "bottom",
   autoplayButtonOutput: false,
 });
 
