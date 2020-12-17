@@ -1,29 +1,51 @@
-<div id="containerForm" class="hidden fixed bottom-28 right-0 z-20 w-screen px-4 sm:w-96 h-96 transform-gpu duration-500">
+<div
+  id="containerForm"
+  class="hidden fixed bottom-28 right-0 z-20 w-screen px-4 sm:w-96 h-96 transform-gpu duration-500"
+>
   <div
-  id="form"
-  class="transition-opacity opacity-0 duration-500 bg-gray-200 border p-6 mb-2 shadow-2xl rounded-lg"
+    id="form"
+    class="transition-opacity opacity-0 duration-500 bg-gray-200 border p-6 mb-2 shadow-2xl rounded-lg"
   >
-  <form class="kwes-form flex flex-col space-y-4" action="https://kwes.io/api/foreign/forms/q9J53ItaDdHSfS0GphFJ">
-    <input name="email" type="email" class="p-2 rounded-lg" placeholder="Adresse mail..." rules="required|max:255" />
-    <textarea
-    name="message"
-    class="p-2 rounded-lg h-64"
-    rules="required|max:255"
-    placeholder="Saisissez votre requête, devis ou tout autre question..."
-    ></textarea>
-    <button
-    class="p-2 bg-red-700 text-white rounded-lg flex items-center justify-center"
-    type="submit"
-    aria-label="Envoyer"
+    <form
+      class="kwes-form flex flex-col space-y-4"
+      action="https://kwes.io/api/foreign/forms/q9J53ItaDdHSfS0GphFJ"
     >
-    <div>Envoyer</div>
-    <div class="h-6 w-6 transform rotate-90 ml-2">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-    </svg>
-  </div>
-    </button>
-  </form>
+      <input
+        name="email"
+        type="email"
+        class="p-2 rounded-lg"
+        placeholder="Adresse mail"
+        rules="required|max:255"
+      />
+      <textarea
+        name="message"
+        class="p-2 rounded-lg h-64"
+        rules="required|max:255"
+        placeholder="Saisissez votre requête"
+      ></textarea>
+      <button
+        class="p-2 bg-red-700 text-white rounded-lg flex items-center justify-center"
+        type="submit"
+        aria-label="Envoyer"
+      >
+        <div>Envoyer</div>
+        <div class="h-6 w-6 transform rotate-90 ml-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+            />
+          </svg>
+        </div>
+      </button>
+    </form>
   </div>
 </div>
 
@@ -31,7 +53,7 @@
   <button
     id="form-button"
     aria-label="Bouton de discussion"
-    style="outline: none;"
+    style="outline: none"
     class="active:bg-red-500 outline-none focus:outline-none focus:ring-4 ring-red-300 bg-red-700 text-white rounded-full h-14 w-14 flex items-center justify-center shadow-2xl"
   >
     <span class="h-8 w-8">
@@ -49,5 +71,5 @@
         />
       </svg>
     </span>
-  </buttom>
+  </button>
 </div>
