@@ -13,6 +13,7 @@
   "author": "laurent.dellanegra@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "copy-webpack-plugin": "^7.0.0",
     "jquery": "^3.5.1",
     "kwesforms": "^2.0.3",
     "tiny-slider": "^2.9.3"
