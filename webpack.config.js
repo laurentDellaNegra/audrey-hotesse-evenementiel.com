@@ -34,7 +34,11 @@ module.exports = {
       scriptLoading: "blocking",
     }),
     new CopyPlugin({
-      patterns: [{ from: "CNAME" }, { from: "src/favicon", to: "favicon" }],
+      patterns: [
+        { from: "CNAME" },
+        { from: "src/favicon", to: "favicon" },
+        { from: "src/mentions-legales.html" },
+      ],
     }),
   ],
   optimization: {
