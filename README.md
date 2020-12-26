@@ -1,8 +1,36 @@
-# audrey-site
+# audrey-hotesse-evenementiel.com
 
 ## Stack
+- Tailwind CSS
 - webpack 5
-- tailwind
-- postcss
+- PostCSS
+- jQuery
 
-TO CONTINUE...
+## Component libraries
+- tiny-slider: carousel
+- kwesform: contact form
+
+## Start
+### Get project
+```
+git clone https://github.com/laurentDellaNegra/audrey-hotesse-evenementiel.com.git
+```
+### Install dependencies
+```
+yarn install
+```
+### Start local server for development
+```
+yarn dev
+```
+### Build production bundle
+```
+yarn build
+```
+### Deploy on gh-pages (update production website)
+```
+yarn deploy
+```
+
+## Github actions
+Everytime a modification is pushed on the main branch, it's trigger a deploy on gh-pages and utpdate the website.

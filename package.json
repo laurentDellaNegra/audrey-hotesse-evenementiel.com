@@ -13,13 +13,13 @@
   "author": "laurent.dellanegra@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "copy-webpack-plugin": "^7.0.0",
     "jquery": "^3.5.1",
     "kwesforms": "^2.0.3",
     "tiny-slider": "^2.9.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.4",
+    "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^1.1.5",
     "gh-pages": "^3.1.0",
