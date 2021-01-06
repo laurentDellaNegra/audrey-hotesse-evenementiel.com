@@ -143,6 +143,8 @@ const slider = tns({
   autoplayButtonOutput: false,
 });
 
+kwesforms.init();
+
 /**
  * Init
  *
