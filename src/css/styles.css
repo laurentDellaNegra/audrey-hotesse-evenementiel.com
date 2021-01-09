@@ -14,4 +14,16 @@
   .header-link {
     @apply p-2 sm:p-4 hover:bg-gray-900 hover:text-white active:bg-red-700;
   }
+
+  .header-link {
+    @apply p-2 sm:p-4 hover:bg-gray-900 hover:text-white active:bg-red-700;
+  }
+
+  .disabled {
+    @apply bg-gray-300 text-gray-400 cursor-not-allowed;
+  }
+
+  .enable {
+    @apply bg-red-700 text-white;
+  }
 }

@@ -1,10 +1,10 @@
 <div
   id="containerForm"
-  class="hidden fixed -bottom-5 -right-1 z-30 w-screen px-4 sm:w-96 transform-gpu duration-500"
+  class="hidden fixed -bottom-5 -right-1 left-0 z-30 w-screen px-4 sm:w-96 transform-gpu duration-500"
 >
   <div
     id="form"
-    class="transition-opacity opacity-0 duration-500 bg-gray-200 border p-6 mb-2 shadow-2xl rounded-lg max-h-72 sm:max-h-full overflow-y-auto"
+    class="transition-opacity opacity-0 duration-500 bg-gray-200 border px-6 pb-6 pt-3 mb-2 shadow-2xl rounded-lg sm:max-h-full overflow-y-auto"
   >
     <!-- Test purpose -->
     <!-- <form
@@ -24,20 +24,21 @@
       lang="fr"
     >
       <input
+        id="input-email"
         name="email"
         type="email"
         class="p-2 rounded-lg"
         placeholder="Adresse mail"
-        rules="required|max:255"
       />
       <textarea
+        id="input-message"
         name="message"
-        class="p-2 rounded-lg h-16 md:h-40"
-        rules="required|max:255"
+        class="p-2 rounded-lg h-32 md:h-72"
         placeholder="Saisissez votre requête"
       ></textarea>
       <button
-        class="p-2 bg-red-700 text-white rounded-lg flex items-center justify-center"
+        id="button-send"
+        class="p-2 disabled rounded-lg flex items-center justify-center"
         type="submit"
         aria-label="Envoyer"
       >

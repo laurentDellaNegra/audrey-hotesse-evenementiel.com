@@ -93,7 +93,34 @@ $("#form-button").on("click", function () {
     closeForm();
   }
 });
-
+let emailValid = false;
+let messageValid = false;
+$("#input-email").on("input", (e) => {
+  const { value } = e.target;
+  const mailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (mailRegex.test(value)) {
+    emailValid = true;
+  } else {
+    emailValid = false;
+  }
+  canDisableButton();
+});
+$("#input-message").on("input", (e) => {
+  const { value } = e.target;
+  if (value !== "") {
+    messageValid = true;
+  } else {
+    messageValid = false;
+  }
+  canDisableButton();
+});
+const canDisableButton = () => {
+  if (emailValid && messageValid) {
+    $("#button-send").removeClass("disabled").addClass("enable");
+  } else {
+    $("#button-send").addClass("disabled").removeClass("enable");
+  }
+};
 /**
  * Navbar management
  *
@@ -145,8 +172,6 @@ const slider = tns({
   navPosition: "bottom",
   autoplayButtonOutput: false,
 });
-
-kwesforms.init();
 
 /**
  * Init
