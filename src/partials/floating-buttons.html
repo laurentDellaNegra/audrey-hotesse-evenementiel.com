@@ -1,10 +1,10 @@
 <div
   id="containerForm"
-  class="hidden fixed bottom-14 right-0 z-20 w-screen px-4 sm:w-96 transform-gpu duration-500"
+  class="hidden fixed -bottom-5 -right-1 z-30 w-screen px-4 sm:w-96 transform-gpu duration-500"
 >
   <div
     id="form"
-    class="transition-opacity opacity-0 duration-500 bg-gray-200 border p-6 mb-2 shadow-2xl rounded-lg max-h-100 overflow-y-auto"
+    class="transition-opacity opacity-0 duration-500 bg-gray-200 border p-6 mb-2 shadow-2xl rounded-lg max-h-72 sm:max-h-full overflow-y-auto"
   >
     <!-- Test purpose -->
     <!-- <form
@@ -12,6 +12,12 @@
       action="https://kwes.io/api/foreign/forms/q9J53ItaDdHSfS0GphFJ"
     > -->
     <!-- Production -->
+    <div class="flex justify-between mb-2">
+      <div></div>
+      <div id="close" class="cursor-pointer text-2xl text-gray-500">
+        &times;
+      </div>
+    </div>
     <form
       class="kwes-form flex flex-col space-y-4"
       action="https://kwes.io/api/foreign/forms/Apu8NvmCDHbqIS9qD7gU"
@@ -26,7 +32,7 @@
       />
       <textarea
         name="message"
-        class="p-2 rounded-lg h-40"
+        class="p-2 rounded-lg h-16 md:h-40"
         rules="required|max:255"
         placeholder="Saisissez votre requête"
       ></textarea>

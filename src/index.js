@@ -117,6 +117,9 @@ $("#backdrop").on("click", function () {
   closeNav();
   closeForm();
 });
+$("#close").on("click", function () {
+  closeForm();
+});
 
 /**
  * Tiny slider
