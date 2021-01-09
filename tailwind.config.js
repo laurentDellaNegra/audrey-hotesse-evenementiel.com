@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         display: ["Parisienne", "cursive"],
       },
+      maxHeight: {
+        100: "28rem",
+      },
     },
   },
   variants: {
