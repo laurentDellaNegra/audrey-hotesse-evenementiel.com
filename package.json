@@ -8,7 +8,8 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d dist",
     "dev": "webpack serve --mode development",
-    "build": "NODE_ENV=production webpack --mode production"
+    "build": "NODE_ENV=production webpack --mode production",
+    "start": "webpack serve --mode production"
   },
   "author": "laurent.dellanegra@gmail.com",
   "license": "ISC",
