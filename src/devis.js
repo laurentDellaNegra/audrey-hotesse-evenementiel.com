@@ -7,7 +7,7 @@ import kwesforms from "kwesforms";
  * Mail support for contact
  *
  */
-kwesforms.init();
+// kwesforms.init();
 
 let isBackdrop = false;
 const showBackdrop = function () {
