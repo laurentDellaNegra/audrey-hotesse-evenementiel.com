@@ -5,6 +5,10 @@ const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
+  entry: {
+    main: "./src/index.js",
+    devis: "./src/devis.js",
+  },
   devServer: {
     watchContentBase: true,
     contentBase: path.resolve(__dirname, "dist"),
@@ -32,6 +36,13 @@ module.exports = {
       template: "./src/index.html",
       filename: "index.html",
       scriptLoading: "blocking",
+      chunks: ["main"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/devis.html",
+      filename: "devis.html",
+      scriptLoading: "blocking",
+      chunks: ["devis"],
     }),
     new CopyPlugin({
       patterns: [
