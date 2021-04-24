@@ -13,11 +13,16 @@
     <div class="section-content">
       <p class="max-w-prose mb-10">
         Je vous invite à remplir le formulaire afin de vous transmettre dans les
-        meilleurs délais une proposition de collaboration qui n'engage en rien.
+        meilleurs délais une proposition de collaboration qui n'engage en
+        rien.<br />
+        Audrey.
       </p>
+      <!-- https://kwes.io/api/foreign/forms/pCRvkoPZ4QXZfFkTAQLq -->
       <form
         class="kwes-form"
-        action="https://kwes.io/api/foreign/forms/pCRvkoPZ4QXZfFkTAQLq"
+        action="https://kwes.io/api/foreign/forms/rfq3dSerK80B1FIXp8r0"
+        data-kw-mode="test"
+        data-kw-lang="fr"
       >
         <div>
           <div
@@ -56,6 +61,7 @@
                 <fieldset
                   data-kw-group
                   class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs sm:text-sm"
+                  rules="required"
                 >
                   <div class="flex items-center space-x-2">
                     <input
@@ -360,6 +366,7 @@
                   type="text"
                   class="w-full p-2 rounded-lg"
                   placeholder="Adresse exacte"
+                  rules="required|max:255"
                 />
               </div>
 
@@ -376,6 +383,7 @@
                   type="number"
                   min="0"
                   class="w-full p-2 rounded-lg"
+                  rules="required"
                 />
               </div>
             </div>
@@ -388,11 +396,10 @@
               <div class="text-gray-700 font-bold text-lg">Mes prestations</div>
               <div class="text-sm">
                 Renseignez ici la date et le type de prestations que vous
-                souhaitez, le briefing ou tout autre information
-                complémentaires.
+                souhaitez, le briefing ou tout autre information complémentaire.
               </div>
             </div>
-            <fieldset data-kw-group class="flex-1">
+            <fieldset data-kw-group class="flex-1" rules="required">
               <!-- Prestations souhaitées -->
               <div class="mb-6">
                 <label class="block text-gray-700 font-semibold mb-2"
@@ -433,13 +440,11 @@
                   <div class="flex items-center space-x-2">
                     <input
                       type="checkbox"
-                      id="Assistance-et-placement-en-salle"
+                      id="Assistance-en-salle"
                       name="prestations-souhaitees"
-                      value="Assistance et placement en salle"
+                      value="Assistance en salle"
                     />
-                    <label for="Assistance-et-placement-en-salle"
-                      >Assistance et placement en salle</label
-                    >
+                    <label for="Assistance-en-salle">Assistance en salle</label>
                   </div>
                   <div class="flex items-center space-x-2">
                     <input
@@ -487,6 +492,15 @@
                       value="Passage micro"
                     />
                     <label for="Passage-micro">Passage micro</label>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id="placement-en-salle"
+                      name="prestations-souhaitees"
+                      value="Placement en salle"
+                    />
+                    <label for="placement-en-salle">Placement en salle</label>
                   </div>
                   <div class="flex items-center space-x-2">
                     <input
@@ -661,6 +675,7 @@
                   type="text"
                   class="w-full p-2 rounded-lg"
                   placeholder=""
+                  rules="required|max:255"
                 />
               </div>
 
@@ -677,6 +692,7 @@
                   type="text"
                   class="w-full p-2 rounded-lg"
                   placeholder=""
+                  rules="required|max:255"
                 />
               </div>
 
@@ -789,6 +805,7 @@
                   type="text"
                   class="w-full p-2 rounded-lg"
                   placeholder=""
+                  rules="required|email"
                 />
               </div>
             </div>
@@ -800,7 +817,6 @@
             class="flex items-center justify-center w-full sm:w-auto mx-auto px-20 py-2 rounded-lg bg-red-700 text-white float-right"
             type="submit"
             aria-label="Envoyer"
-            disabled
           >
             <div>Envoyer</div>
             <div class="h-5 w-5 transform rotate-90 ml-3">

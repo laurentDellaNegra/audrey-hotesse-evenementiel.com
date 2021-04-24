@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.5.1",
-    "kwesforms": "^2.0.3",
+    "kwesforms": "^2.0.22",
     "tiny-slider": "^2.9.3"
   },
   "devDependencies": {
