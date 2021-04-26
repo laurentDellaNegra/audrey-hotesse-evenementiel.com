@@ -87,12 +87,16 @@ const closeForm = function () {
   }
 };
 $("#form-button").on("click", function () {
-  if (!isFormOpen) {
-    openForm();
-  } else {
-    closeForm();
-  }
+  // go to devis page
+  window.location.href = "/devis.html";
 });
+// $("#form-button").on("click", function () {
+//   if (!isFormOpen) {
+//     openForm();
+//   } else {
+//     closeForm();
+//   }
+// });
 let emailValid = false;
 let messageValid = false;
 $("#input-email").on("input", (e) => {

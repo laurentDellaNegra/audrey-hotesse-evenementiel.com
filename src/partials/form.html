@@ -11,11 +11,12 @@
       />
     </h1>
     <div class="section-content">
-      <p class="max-w-prose mb-10">
-        Je vous invite à remplir le formulaire afin de vous transmettre dans les
-        meilleurs délais une proposition de collaboration qui n'engage en
-        rien.<br />
-        Audrey.
+      <p class="max-w-prose mb-10 mx-auto">
+        Je vous invite à remplir le formulaire. Celui-ci me permet de connaître
+        vos attentes.<br />
+        Je vous envoie dans les meilleurs délais une proposition de
+        collaboration qui n'engage en rien.<br /><br />
+        A bientôt, Audrey
       </p>
       <!-- https://kwes.io/api/foreign/forms/pCRvkoPZ4QXZfFkTAQLq -->
       <form
@@ -576,6 +577,7 @@
                   name="dates-et-horaires-des-prestations"
                   class="w-full p-2 rounded-lg"
                   placeholder="Précisez dates et horaires de chaque jour"
+                  rules="required|max:255"
                 ></textarea>
               </div>
 
@@ -586,48 +588,51 @@
                   for="event-briefing"
                   >Briefing</label
                 >
-                <input
-                  class="w-full p-2 rounded-lg mb-2"
-                  type="text"
-                  id="event-briefing"
-                  name="briefing-date-et-heures"
-                  placeholder="Précisez la date et l'heure"
-                />
-                <div class="flex space-x-4">
-                  <div>Se déroule :</div>
+                <div class="flex space-x-4 mb-2">
+                  <div>Nous échangeons autour :</div>
                   <fieldset data-kw-group rules="required">
-                    <div>
-                      <input
-                        type="radio"
-                        id="briefing-place-mail"
-                        name="deroulement-briefing"
-                        value="Se déroule par mail"
-                        checked
-                      />
-                      <label for="briefing-place-mail">par mail</label>
-                    </div>
                     <div>
                       <input
                         type="radio"
                         id="briefing-place-tel"
                         name="deroulement-briefing"
-                        value="Se déroule par téléphone"
+                        value="Par téléphone"
                       />
-                      <label for="briefing-place-tel">par téléphone</label>
+                      <label for="briefing-place-tel"
+                        >d'un rendez-vous téléphonique</label
+                      >
                     </div>
                     <div>
                       <input
                         type="radio"
                         id="briefing-place-on-time"
                         name="deroulement-briefing"
-                        value="Se déroule sur le lieu de l’évènement"
+                        value="Sur le lieu de l’évènement"
                       />
                       <label for="briefing-place-on-time"
-                        >sur le lieu de l’évènement</label
+                        >d'un face à face sur le lieu de l'évènement</label
                       >
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        id="briefing-place-mail"
+                        name="deroulement-briefing"
+                        value="Par mail"
+                        checked
+                      />
+                      <label for="briefing-place-mail">d'un mail</label>
                     </div>
                   </fieldset>
                 </div>
+                <input
+                  class="w-full p-2 rounded-lg mb-2"
+                  type="text"
+                  id="event-briefing"
+                  name="briefing-date-et-heures"
+                  placeholder="Précisez la date et l'heure"
+                  rules="required|max:255"
+                />
               </div>
 
               <!-- Informations complémentaires -->
@@ -643,6 +648,7 @@
                   class="w-full p-2 rounded-lg"
                   rows="5"
                   placeholder="Prise de repas, pauses, déroulement de l'évènement, particularités..."
+                  rules="required"
                 ></textarea>
               </div>
             </fieldset>
@@ -772,6 +778,7 @@
                   type="text"
                   class="w-full p-2 rounded-lg"
                   placeholder=""
+                  rules="required|max:255"
                 />
               </div>
 
@@ -788,6 +795,7 @@
                   type="text"
                   class="w-full p-2 rounded-lg"
                   placeholder=""
+                  rules="required|max:255"
                 />
               </div>
 
